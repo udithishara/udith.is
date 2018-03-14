@@ -10,8 +10,7 @@
 
 #### Getting Started
 
-- Clone the repo
-- cd into `react-google-query-language`
+- Run `git checkout react-google-query-language`
 - Run `yarn install` to install the dependencies
 - Run `yarn run start` to start the dev server
 - Run `yarn build` for production build
