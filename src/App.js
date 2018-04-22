@@ -77,7 +77,7 @@ const Posts = ({ Posts, handleData }) => {
 }
 
 const Post = ({ Post, handleData, postID}) => {
-  if (Post == null) {
+  if (Post == null || Post[0]['slug'] !== postID) {
     return [
       <FetchData
         key="Post"
