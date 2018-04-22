@@ -6,10 +6,7 @@ class FetchData extends Component {
 
   constructor(props) {
     super(props)
-    // console.log(props)
-    //Place the load in main app.js file to avoid onloadwff.js error
-    window.google.load('visualization', '1', {'packages': ['table']});
-    window.google.setOnLoadCallback(this._fetchData.bind(this));
+    window.google.load('visualization', '1', {'packages': ['table'], "callback" : this._fetchData.bind(this)});
     this.state = {
       FetchState: null
     }
