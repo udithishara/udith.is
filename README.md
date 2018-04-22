@@ -10,7 +10,6 @@
 
 #### Getting Started
 
-- Run `git checkout react-google-query-language`
 - Run `yarn install` to install the dependencies
 - Run `yarn start` to start the dev server
 - Run `yarn build` for production build
