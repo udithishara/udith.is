@@ -8,7 +8,8 @@ class FetchData extends Component {
     super(props)
     window.google.load('visualization', '1', {'packages': ['table'], "callback" : this._fetchData.bind(this)});
     this.state = {
-      FetchState: null
+      isLoading: null,
+      errMessage: null
     }
   }
 
@@ -48,7 +49,7 @@ class FetchData extends Component {
 
   _fetchData = async () => {
     this.setState({
-      FetchState: <Loading />
+      isLoading: true
     });
 
     try {
@@ -72,7 +73,8 @@ class FetchData extends Component {
             this.props.onFetch(parsedData, this.props.saveState)
           } else {
             this.setState({
-              FetchState: <Error message="No such article"/>
+              isLoading: false,
+              errMessage: "No Results Found"
             });
           }
         });
@@ -84,7 +86,7 @@ class FetchData extends Component {
   };
 
   render() {
-    return this.state.FetchState
+    return this.state.isLoading ? <Loading /> : <Error message={this.state.errMessage}/>
   }
 
 
