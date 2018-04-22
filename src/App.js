@@ -8,19 +8,24 @@ import './css/github-markdown.css';
 import './css/App.css';
 
 class App extends Component {
-
   constructor() {
     super();
 
     this.state = {
-      post: null,
       posts: null,
+      post: null,
+      tags: null
     }
+  }
+
+  handleData = (data, saveState) => {
+    this.setState({
+      [saveState]: data
+    });
   }
 
   render() {
     return (
-      //<div>
       <div className="markdown-body">
         <Header />
 
@@ -29,21 +34,73 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
 
           <Route exact path="/posts" render={() => (
-            <Posts posts={this.state.posts} testProp={100} />
+            <Posts
+              handleData={this.handleData}
+              Posts={this.state.posts}
+            />
           )}/>
 
           <Route exact path="/post/:postID" render={({ match }) => (
-            <Post postID={match.params.postID} />
+            <Post
+              handleData={this.handleData}
+              Post={this.state.post}
+              postID={match.params.postID}
+            />
           )}/>
 
-          <Route exact path="/category/:categoryID" render={({ match }) => (
-            <Category categoryID={match.params.categoryID} />
+          <Route exact path="/tag/:tagID" render={({ match }) => (
+            <Tags
+              handleData={this.handleData}
+              Tags={this.state.tags}
+              tagID={match.params.tagID}
+            />
           )}/>
-
 
         </Switch>
       </div>
     );
+  }
+}
+
+const Posts = ({ Posts, handleData }) => {
+  if (Posts == null) {
+    return [
+      <FetchData
+        key="Posts"
+        gQuery={`SELECT A,B,C WHERE E = 1`}
+        onFetch={handleData}
+        saveState={`posts`} />
+    ]
+  } else {
+    return <pre key="Posts">{JSON.stringify(Posts, null, 2)}</pre>
+  }
+}
+
+const Post = ({ Post, handleData, postID}) => {
+  if (Post == null) {
+    return [
+      <FetchData
+        key="Post"
+        gQuery={`SELECT A,B,C,D,E,F WHERE B = '${postID}'`}
+        onFetch={handleData}
+        saveState={`post`} />
+    ]
+  } else {
+    return <pre key="Post">{JSON.stringify(Post, null, 2)}</pre>
+  }
+}
+
+const Tags = ({ Tags, handleData, tagID }) => {
+  if (Tags == null) {
+    return [
+      <FetchData
+        key="Tags"
+        gQuery={`SELECT A,B,C WHERE D contains '${tagID}'`}
+        onFetch={handleData}
+        saveState={`tags`} />
+    ]
+  } else {
+    return <pre key="Tags">{JSON.stringify(Tags, null, 2)}</pre>
   }
 }
 
@@ -53,12 +110,15 @@ const Header = () => (
       <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/posts'>Posts</Link></li>
+        <li><Link to='/tag/cat2'>Tag</Link></li>
+        <li><Link to='/post/post-slug-one'>post-slug-one</Link></li>
+        <li><Link to='/post/post-slug-two'>post-slug-two</Link></li>
       </ul>
     </nav>
   </header>
 );
 
-const Home = (props) => {
+const Home = () => {
   return (
     <div>
       <h2>Home</h2>
@@ -66,84 +126,5 @@ const Home = (props) => {
   )
 };
 
-const Posts = ( props ) => {
-  return (
-    <div>
-      <h2>Posts</h2>
-
-      <ul>
-        <FetchData gQuery={`SELECT A,B,C`}>
-          {content => (
-            content.map((item, i) => {
-              return (
-                <li key={item.id}>
-                  <Link to={`/post/${item.slug}`}>
-                    {item.title}
-                  </Link>
-                </li>
-              );
-            })
-
-          )}
-        </FetchData>
-      </ul>
-    </div>
-  )
-};
-
-
-const Post = ( props ) => {
-  return (
-    <div>
-      <h2>Post</h2>
-
-      <FetchData gQuery={`SELECT A,B,C,D,E WHERE B = '${props.postID}'`}>
-        {content => (
-          <div key={content[0].id}>
-            <h3>{content[0]['title']}</h3>
-
-            {content[0]['category'].split(",").map((item, i) => {
-                return (
-                  <li key={i}>
-                    <Link to={`/category/${item}`}>
-                      {item}
-                    </Link>
-                  </li>
-                )
-             })}
-
-            <MarkdownIt source={content[0]['content']} />
-
-          </div>
-        )}
-      </FetchData>
-    </div>
-  )
-};
-
-const Category = ( props ) => {
-  return (
-    <div>
-      <h2>Category</h2>
-
-      <ul>
-        <FetchData gQuery={`SELECT A,B,C WHERE D contains '${props.categoryID}'`}>
-          {content => (
-            content.map((item, i) => {
-              return (
-                <li key={item.id}>
-                  <Link to={`/post/${item.slug}`}>
-                    {item.title}
-                  </Link>
-                </li>
-              );
-            })
-
-          )}
-        </FetchData>
-      </ul>
-    </div>
-  )
-};
 
 export default App;
