@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './css/App.css';
 // eslint-disable-next-line
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import FetchData from './Components/FetchData';
@@ -72,7 +71,25 @@ const Posts = ({ Posts, handleData }) => {
         saveState={`posts`} />
     ]
   } else {
-    return <pre key="Posts">{JSON.stringify(Posts, null, 2)}</pre>
+    return (
+      <div>
+        <h2>Posts</h2>
+
+        <ul>
+          {
+            Posts.map((item, i) => {
+              return (
+                <li key={item.id}>
+                  <Link to={`/post/${item.slug}`}>
+                    {item.title}
+                  </Link>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    )
   }
 }
 
@@ -86,8 +103,28 @@ const Post = ({ Post, handleData, postID}) => {
         saveState={`post`} />
     ]
   } else {
-    return <pre key="Post">{JSON.stringify(Post, null, 2)}</pre>
-  }
+    return (
+      <div>
+        <h2>Post</h2>
+
+          <div key={Post[0].id}>
+            <h3>{Post[0]['title']}</h3>
+
+            {Post[0]['category'].split(",").map((item, i) => {
+              return (
+                <li key={i}>
+                  <Link to={`/tag/${item}`}>
+                    {item}
+                  </Link>
+                </li>
+              )
+            })}
+
+            <MarkdownIt source={Post[0]['content']} />
+
+          </div>
+      </div>
+    )  }
 }
 
 const Tags = ({ Tags, handleData, tagID }) => {
@@ -100,7 +137,25 @@ const Tags = ({ Tags, handleData, tagID }) => {
         saveState={`tags`} />
     ]
   } else {
-    return <pre key="Tags">{JSON.stringify(Tags, null, 2)}</pre>
+    return (
+      <div>
+        <h2>Tags</h2>
+
+        <ul>
+          {
+            Tags.map((tag, i) => {
+              return (
+                <li key={tag.id}>
+                  <Link to={`/post/${tag.slug}`}>
+                    {tag.title}
+                  </Link>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    )
   }
 }
 
