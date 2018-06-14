@@ -9,12 +9,13 @@ class FetchData extends Component {
     window.google.load('visualization', '1', {'packages': ['table'], "callback" : this._fetchData.bind(this)});
     this.state = {
       isLoading: null,
-      errMessage: null
+      errMessage: null,
+      tombstoneType: null
     }
   }
 
   componentDidMount() {
-    this._fetchData(this.props)
+    // this._fetchData(this.props)
   }
 
   // https://coderwall.com/p/pluhsg/google-spreadsheet-json-api-sql-filtering
@@ -49,7 +50,8 @@ class FetchData extends Component {
 
   _fetchData = async () => {
     this.setState({
-      isLoading: true
+      isLoading: true,
+      tombstoneType: this.props.tombstoneType
     });
 
     try {
@@ -69,6 +71,7 @@ class FetchData extends Component {
           let jsonData = JSON.parse(dataTable.toJSON());
           let parsedData = this.parseData(jsonData);
           // console.log(parsedData);
+          console.log(this.props.tombstoneType)
           if (parsedData) {
             this.props.onFetch(parsedData, this.props.saveState)
           } else {
@@ -86,7 +89,7 @@ class FetchData extends Component {
   };
 
   render() {
-    return this.state.isLoading ? <Loading /> : <Error message={this.state.errMessage}/>
+    return this.state.isLoading ? <Loading tombstoneType={this.state.tombstoneType} /> : <Error message={this.state.errMessage}/>
   }
 
 
