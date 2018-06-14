@@ -4,6 +4,8 @@
 
 - ReactJS
 - React-Router
+- React-helmet
+- React-content-loader
 - Google Spreadsheets
 - Google Query Language
 - Markdown-it
@@ -16,6 +18,8 @@
 
 #### TO:DO
 
-- Use `react-helmet` to add meta-data
+- ~Use `react-helmet` to add meta-data~
+- Setup Linting
+- Improve the code to fit coding standards 
 
 ###### Contributions are welcome
