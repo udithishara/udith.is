@@ -2,7 +2,7 @@
 
 #### Tools Used
 
-- ReactJS
+- ReactJS (create-react-app)
 - React-Router
 - React-helmet
 - React-content-loader
