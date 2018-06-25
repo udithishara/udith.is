@@ -18,8 +18,7 @@
 
 #### TO:DO
 
-- ~Use `react-helmet` to add meta-data~
-- Setup Linting
+- ~Use `react-helmet` to add meta-data~ - Done
 - Improve the code to fit coding standards 
 
 ###### Contributions are welcome
