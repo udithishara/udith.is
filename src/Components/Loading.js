@@ -6,7 +6,7 @@ class  Loading extends Component {
   renderTombstoneFilter() {
     if (this.props.tombstoneType === "list") {
       return [
-        <ContentLoader height={120}>
+        <ContentLoader key="tombOne" height={120}>
           <rect x="40" y="5" rx="1" ry="1" width="300" height="13" />
           <rect x="40" y="22" rx="1" ry="1" width="100" height="5" />
           <rect x="40" y="41" rx="1" ry="1" width="300" height="9" />
@@ -15,7 +15,7 @@ class  Loading extends Component {
           <rect x="40" y="78" rx="1" ry="1" width="300" height="9" />
           <rect x="40" y="101" rx="1" ry="1" width="300" height="0.6" />
         </ContentLoader>,
-          <ContentLoader>
+          <ContentLoader key="tombTwo">
             <rect x="40" y="5" rx="1" ry="1" width="300" height="13" />
             <rect x="40" y="22" rx="1" ry="1" width="100" height="5" />
             <rect x="40" y="41" rx="1" ry="1" width="300" height="9" />
@@ -26,7 +26,7 @@ class  Loading extends Component {
           </ContentLoader>
       ]
     } if (this.props.tombstoneType === "single") {
-      return(
+      return (
         <ContentLoader height={200}>
           <rect x="40" y="5" rx="1" ry="1" width="300" height="13" />
           <rect x="40" y="22" rx="1" ry="1" width="100" height="5" />

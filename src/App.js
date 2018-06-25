@@ -27,8 +27,8 @@ class App extends Component {
 
   render() {
     return [
-      <Header />,
-        <div className="markdown-body">
+      <Header key="Header" />,
+        <div key="markdown-body" className="markdown-body">
 
 
           <Switch>
@@ -64,24 +64,24 @@ class App extends Component {
 
           </Switch>
         </div>,
-      <Footer />
+      <Footer key="Footer" />
     ];
   }
 }
 
 const Posts = ({ Posts, handleData }) => {
-  if (Posts == null) {
-    return [
+  if (Posts === null) {
+    return (
       <FetchData
         key="Posts"
         gQuery={`SELECT A,B,C,D,F,G WHERE E = 1`}
         onFetch={handleData}
         saveState={`posts`}
         tombstoneType={`list`} />
-    ]
+    )
   } else {
     return [
-      <div>
+      <div key="PostsList">
         {
           Posts.map((item, i) => {
             return (
@@ -105,7 +105,7 @@ const Posts = ({ Posts, handleData }) => {
           })
         }
       </div>,
-      <Helmet>
+      <Helmet key="postsListTitle">
         <title>Posts</title>
       </Helmet>
     ]
@@ -136,7 +136,7 @@ const Post = ({ Post, handleData, postID}) => {
           <MarkdownIt source={Post[0]['content']} />
         </div>
       </article>,
-      <Helmet>
+      <Helmet key="postTitle">
         <title>{Post[0]['title']}</title>
       </Helmet>
     ]
@@ -199,20 +199,20 @@ const Footer = () => (
 
 const Home = () => {
   return [
-    <div>
+    <div key="Home">
       <h2>Home</h2>
     </div>,
-    <Helmet>
+    <Helmet key="HomeTitle">
       <title>Home</title>
     </Helmet>
   ]
 };
 
 const NoMatch = ({ location }) => [
-  <div>
+  <div key="Error">
     <h3>No match for <code>{location.pathname}</code></h3>
   </div>,
-  <Helmet>
+  <Helmet key="ErrorTitle">
     <title>404</title>
   </Helmet>
 ]
