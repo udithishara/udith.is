@@ -74,7 +74,7 @@ const Posts = ({ Posts, handleData }) => {
     return (
       <FetchData
         key="Posts"
-        gQuery={`SELECT A,B,C,D,F,G WHERE E = 1`}
+        gQuery={`SELECT A,B,C,D,F,G,H WHERE E = 1`}
         onFetch={handleData}
         saveState={`posts`}
         tombstoneType={`list`} />
@@ -92,7 +92,7 @@ const Posts = ({ Posts, handleData }) => {
                   </Link>
                 </h1>
                 <p className="post__meta">
-                  Published: {Date()}
+                  Published: <PublishedDate timestamp={item.publishedDate} />
                 </p>
 
                 <p className="post__digest">
@@ -117,7 +117,7 @@ const Post = ({ Post, handleData, postID}) => {
     return [
       <FetchData
         key="Post"
-        gQuery={`SELECT A,B,C,D,E,F WHERE B = '${postID}'`}
+        gQuery={`SELECT A,B,C,D,E,F,H WHERE B = '${postID}'`}
         onFetch={handleData}
         saveState={`post`}
         tombstoneType={`single`} />
@@ -129,7 +129,7 @@ const Post = ({ Post, handleData, postID}) => {
           {Post[0]['title']}
         </h1>
         <p className="post__meta">
-          Published: {Date()}
+          Published: <PublishedDate timestamp={Post[0].publishedDate} />
         </p>
 
         <div className="post_content">
@@ -216,6 +216,20 @@ const NoMatch = ({ location }) => [
     <title>404</title>
   </Helmet>
 ]
+
+const PublishedDate = ({ timestamp }) => {
+  let publishedDate = new Date(timestamp * 1000);
+  return (
+    <span>
+          {new Intl.DateTimeFormat('en-GB', {
+            year: 'numeric',
+            month: 'long',
+            day: '2-digit'
+          }).format(publishedDate)
+          }
+    </span>
+  )
+}
 
 const Tombstones = () => {
   return [
