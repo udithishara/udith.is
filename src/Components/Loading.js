@@ -6,44 +6,43 @@ class  Loading extends Component {
   renderTombstoneFilter() {
     if (this.props.tombstoneType === "list") {
       return [
-        <ContentLoader key="tombOne" height={120}>
-          <rect x="40" y="5" rx="1" ry="1" width="300" height="13" />
-          <rect x="40" y="22" rx="1" ry="1" width="100" height="5" />
-          <rect x="40" y="41" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="54" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="66" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="78" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="101" rx="1" ry="1" width="300" height="0.6" />
+        <ContentLoader key="tombOne" height={140}>
+          <rect y="5" rx="1" ry="1" style={{ width: '50%', height: '13' }} preserveAspectRatio="none" />
+          <rect y="25" rx="1" ry="1" style={{ width: '21%', height: '7' }} preserveAspectRatio="none" />
+          <rect y="49" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="65" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="81" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="96" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect  y="119" rx="1" ry="1" style={{ width: '100%', height: '0.6' }} preserveAspectRatio="none" />
         </ContentLoader>,
-          <ContentLoader key="tombTwo">
-            <rect x="40" y="5" rx="1" ry="1" width="300" height="13" />
-            <rect x="40" y="22" rx="1" ry="1" width="100" height="5" />
-            <rect x="40" y="41" rx="1" ry="1" width="300" height="9" />
-            <rect x="40" y="54" rx="1" ry="1" width="300" height="9" />
-            <rect x="40" y="66" rx="1" ry="1" width="300" height="9" />
-            <rect x="40" y="78" rx="1" ry="1" width="300" height="9" />
-            <rect x="40" y="101" rx="1" ry="1" width="300" height="0.6" />
-          </ContentLoader>
+        <ContentLoader key="tombTwo" height={120}>
+          <rect y="5" rx="1" ry="1" style={{ width: '50%', height: '13' }} preserveAspectRatio="none" />
+          <rect y="25" rx="1" ry="1" style={{ width: '21%', height: '7' }} preserveAspectRatio="none" />
+          <rect y="49" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="65" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="81" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="96" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect  y="119" rx="1" ry="1" style={{ width: '100%', height: '0.6' }} preserveAspectRatio="none" />
+        </ContentLoader>
       ]
     } if (this.props.tombstoneType === "single") {
       return (
-        <ContentLoader height={200}>
-          <rect x="40" y="5" rx="1" ry="1" width="300" height="13" />
-          <rect x="40" y="22" rx="1" ry="1" width="100" height="5" />
-          <rect x="40" y="41" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="54" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="66" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="78" rx="1" ry="1" width="280" height="9" />
-
-          <rect x="40" y="98" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="110" rx="1" ry="1" width="180" height="9" />
-
-          <rect x="40" y="130" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="142" rx="1" ry="1" width="150" height="9" />
-          <rect x="195" y="142" rx="1" ry="1" width="145" height="9" />
-          <rect x="40" y="154" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="166" rx="1" ry="1" width="300" height="9" />
-          <rect x="40" y="178" rx="1" ry="1" width="230" height="9" />
+        <ContentLoader height={220}>
+          <rect y="5" rx="1" ry="1" style={{ width: '40%', height: '13' }} preserveAspectRatio="none" />
+          <rect y="25" rx="1" ry="1" style={{ width: '21%', height: '7' }} preserveAspectRatio="none" />
+          <rect y="49" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="65" rx="1" ry="1" style={{ width: '30%', height: '10' }} preserveAspectRatio="none" />
+          <rect x={'32%'} y="65" rx="1" ry="1" style={{ width: '68%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="81" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="96" rx="1" ry="1" style={{ width: '80%', height: '10' }} preserveAspectRatio="none" />
+          <rect x={'82%'} y="96" rx="1" ry="1" style={{ width: '18%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="120" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="135" rx="1" ry="1" style={{ width: '70%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="160" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="175" rx="1" ry="1" style={{ width: '50%', height: '10' }} preserveAspectRatio="none" />
+          <rect x={'52%'} y="175" rx="1" ry="1" style={{ width: '48%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="190" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
+          <rect y="205" rx="1" ry="1" style={{ width: '90%', height: '10' }} preserveAspectRatio="none" />
         </ContentLoader>
       )
     }
