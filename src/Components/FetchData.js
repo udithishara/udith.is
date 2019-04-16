@@ -5,7 +5,7 @@ import Error from './Error';
 class FetchData extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     window.google.load('visualization', '1', {'packages': ['table'], "callback" : this._fetchData.bind(this)});
     this.state = {
       isLoading: null,

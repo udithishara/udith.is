@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 // eslint-disable-next-line
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Link, NavLink, Route } from 'react-router-dom';
 import FetchData from './Components/FetchData';
 import MarkdownIt from './Components/react-markdown-it';
 import { Helmet } from 'react-helmet';
@@ -23,13 +23,12 @@ class App extends Component {
     this.setState({
       [saveState]: data
     });
-  }
+  };
 
   render() {
     return [
-      <div key="markdown-body" className="markdown-body">
-        <Header key="Header" />
-
+      <Header key="Header" />,
+      <main key="Main">
 
         <Switch>
 
@@ -63,7 +62,7 @@ class App extends Component {
           <Route component={NoMatch} />
 
         </Switch>
-      </div>,
+      </main>,
       <Footer key="Footer" />
     ];
   }
@@ -81,7 +80,7 @@ const Posts = ({ Posts, handleData }) => {
     )
   } else {
     return [
-      <div key="PostsList">
+      <Fragment key="PostsList">
         {
           Posts.map((item, i) => {
             return (
@@ -91,9 +90,9 @@ const Posts = ({ Posts, handleData }) => {
                     {item.title}
                   </Link>
                 </h1>
-                <p className="post__meta">
+                <span className="post__meta">
                   Published: <PublishedDate timestamp={item.publishedDate} />
-                </p>
+                </span>
 
                 <p className="post__digest">
                   {item.digest}
@@ -104,16 +103,16 @@ const Posts = ({ Posts, handleData }) => {
             );
           })
         }
-      </div>,
+      </Fragment>,
       <Helmet key="postsListTitle">
         <title>Posts</title>
       </Helmet>
     ]
   }
-}
+};
 
 const Post = ({ Post, handleData, postID}) => {
-  if (Post == null || Post[0]['slug'] !== postID) {
+  if (Post === null || Post[0]['slug'] !== postID) {
     return [
       <FetchData
         key="Post"
@@ -128,9 +127,9 @@ const Post = ({ Post, handleData, postID}) => {
         <h1 className="post__title">
           {Post[0]['title']}
         </h1>
-        <p className="post__meta">
+        <span className="post__meta">
           Published: <PublishedDate timestamp={Post[0].publishedDate} />
-        </p>
+        </span>
 
         <div className="post_content">
           <MarkdownIt source={Post[0]['content']} />
@@ -141,10 +140,10 @@ const Post = ({ Post, handleData, postID}) => {
       </Helmet>
     ]
   }
-}
+};
 
 const Tags = ({ Tags, handleData, tagID }) => {
-  if (Tags == null) {
+  if (Tags === null) {
     return [
       <FetchData
         key="Tags"
@@ -176,19 +175,17 @@ const Tags = ({ Tags, handleData, tagID }) => {
       </Helmet>
     ]
   }
-}
+};
 
 const Header = () => (
-  <header>
-    <nav>
-      <ul className="primary-nav">
-        <li><Link to='/'>Theme Name</Link></li>
-        <li><Link to='/posts'>Posts</Link></li>
-        <li><Link to='/About'>About</Link></li>
-        <li><Link to='/post/creating-a-new-theme'>creating-a-new-theme</Link></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <ul className="nav">
+      <li className="nav__item nav__item--branding"><NavLink exact={true} to='/'>Theme Name</NavLink></li>
+      <li className="nav__item"><NavLink className="nav__url" activeClassName="nav__url--selected" to='/posts'>Posts</NavLink></li>
+      <li className="nav__item"><NavLink className="nav__url" activeClassName="nav__url--selected" to='/About'>About</NavLink></li>
+      <li className="nav__item"><NavLink className="nav__url" activeClassName="nav__url--selected" to='/post/creating-a-new-theme'>creating-a-new-theme</NavLink></li>
+    </ul>
+  </nav>
 );
 
 const Footer = () => (
@@ -199,9 +196,9 @@ const Footer = () => (
 
 const Home = () => {
   return [
-    <div key="Home">
+    <Fragment key="Home">
       <h2>Home</h2>
-    </div>,
+    </Fragment>,
     <Helmet key="HomeTitle">
       <title>Home</title>
     </Helmet>
@@ -215,7 +212,7 @@ const NoMatch = ({ location }) => [
   <Helmet key="ErrorTitle">
     <title>404</title>
   </Helmet>
-]
+];
 
 const PublishedDate = ({ timestamp }) => {
   let publishedDate = new Date(timestamp * 1000);
@@ -229,7 +226,7 @@ const PublishedDate = ({ timestamp }) => {
           }
     </span>
   )
-}
+};
 
 const Tombstones = () => {
   return [
@@ -253,6 +250,6 @@ const Tombstones = () => {
       <rect y="205" rx="1" ry="1" style={{ width: '90%', height: '10' }} preserveAspectRatio="none" />
     </ContentLoader>
   ]
-}
+};
 
 export default App;

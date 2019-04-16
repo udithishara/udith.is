@@ -7,86 +7,86 @@
   src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
 }
 
-.markdown-body {
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   line-height: 1.75rem;
   word-wrap: break-word;
 }
 
-.markdown-body .octicon {
+.octicon {
   display: inline-block;
   vertical-align: text-top;
   fill: currentColor;
 }
 
-body a {
+a {
   background-color: transparent;
 }
 
-body a:active,
-body a:hover {
+a:active,
+a:hover {
   outline-width: 0;
 }
 
-body strong {
+strong {
   font-weight: inherit;
 }
 
-body strong {
+strong {
   font-weight: bolder;
 }
 
-body img {
+img {
   border-style: none;
 }
 
-body code,
-body kbd,
-body pre {
+code,
+kbd,
+pre {
   font-family: monospace, monospace;
   font-size: 1em;
 }
 
-body hr {
+hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
 
-body input {
+input {
   font: inherit;
   margin: 0;
 }
 
-body input {
+input {
   overflow: visible;
 }
 
-body [type="checkbox"] {
+[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-body * {
+* {
   box-sizing: border-box;
 }
 
-body input {
+input {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
 
-body a {
+a {
   text-decoration: none;
 }
 
-body strong {
+strong {
   font-weight: 600;
 }
 
-body hr {
+hr {
   height: 0;
   margin: 15px 0;
   overflow: hidden;
@@ -95,67 +95,67 @@ body hr {
   border-bottom: 1px solid #dfe2e5;
 }
 
-body hr::before {
+hr::before {
   display: table;
   content: "";
 }
 
-body hr::after {
+hr::after {
   display: table;
   clear: both;
   content: "";
 }
 
-body table {
+table {
   border-spacing: 0;
   border-collapse: collapse;
 }
 
 
-body blockquote {
+blockquote {
   margin: 0;
 }
 
-body ul,
-body ol {
+ul,
+ol {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-body ol ol,
-body ul ol {
+ol ol,
+ul ol {
   list-style-type: lower-roman;
 }
 
-body ul ul ol,
-body ul ol ol,
-body ol ul ol,
-body ol ol ol {
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
   list-style-type: lower-alpha;
 }
 
-body dd {
+dd {
   margin-left: 0;
 }
 
-body code {
+code {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
 }
 
-body pre {
+pre {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
 }
 
-body .octicon {
+.octicon {
   vertical-align: text-bottom;
 }
 
-body .pl-0 {
+.pl-0 {
   padding-left: 0 !important;
 }
 
@@ -170,32 +170,24 @@ body::after {
   content: "";
 }
 
-.markdown-body>*:first-child {
-  margin-top: 0 !important;
-}
-
-.markdown-body>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-body a:not([href]) {
+a:not([href]) {
   color: inherit;
   text-decoration: none;
 }
 
 
-body p,
-body blockquote,
-body ul,
-body ol,
-body dl,
-body table,
-body pre {
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-body hr {
+hr {
   height: 0.25em;
   padding: 0;
   margin: 24px 0;
@@ -203,21 +195,21 @@ body hr {
   border: 0;
 }
 
-body blockquote {
+blockquote {
   padding: 0 1em;
   color: #6a737d;
   border-left: 0.25em solid #dfe2e5;
 }
 
-body blockquote>:first-child {
+blockquote>:first-child {
   margin-top: 0;
 }
 
-body blockquote>:last-child {
+blockquote>:last-child {
   margin-bottom: 0;
 }
 
-body kbd {
+kbd {
   display: inline-block;
   padding: 3px 5px;
   font-size: 11px;
@@ -231,86 +223,86 @@ body kbd {
   box-shadow: inset 0 -1px 0 #959da5;
 }
 
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 24px;
   margin-bottom: 16px;
   font-weight: 600;
   line-height: 1.25;
 }
 
-body h1 .octicon-link,
-body h2 .octicon-link,
-body h3 .octicon-link,
-body h4 .octicon-link,
-body h5 .octicon-link,
-body h6 .octicon-link {
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
   color: #1b1f23;
   vertical-align: middle;
   visibility: hidden;
 }
 
-body h1 {
+h1 {
   padding-bottom: 0.3em;
   font-size: 2em;
 }
 
-body h2 {
+h2 {
   padding-bottom: 0.3em;
   font-size: 1.5em;
 }
 
-body h3 {
+h3 {
   font-size: 1.25em;
 }
 
-body h4 {
+h4 {
   font-size: 1em;
 }
 
-body h5 {
+h5 {
   font-size: 0.875em;
 }
 
-body h6 {
+h6 {
   font-size: 0.85em;
   color: #6a737d;
 }
 
-body ul,
-body ol {
+ul,
+ol {
   padding-left: 2em;
 }
 
-body ul ul,
-body ul ol,
-body ol ol,
-body ol ul {
+ul ul,
+ul ol,
+ol ol,
+ol ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-body li {
-  word-wrap: break-all;
+li {
+  word-wrap: break-word;
 }
 
-body li>p {
+li>p {
   margin-top: 16px;
 }
 
-body li+li {
+li+li {
   margin-top: 0.25em;
 }
 
-body dl {
+dl {
   padding: 0;
 }
 
-body dl dt {
+dl dt {
   padding: 0;
   margin-top: 16px;
   font-size: 1em;
@@ -318,51 +310,51 @@ body dl dt {
   font-weight: 600;
 }
 
-body dl dd {
+dl dd {
   padding: 0 16px;
   margin-bottom: 16px;
 }
 
-body table {
+table {
   display: block;
   width: 100%;
   overflow: auto;
 }
 
-body table th {
+table th {
   font-weight: 600;
 }
 
-body table th,
-body table td {
+table th,
+table td {
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
 }
 
-body table tr {
+table tr {
   background-color: #fff;
   border-top: 1px solid #c6cbd1;
 }
 
-body table tr:nth-child(2n) {
+table tr:nth-child(2n) {
   background-color: #f6f8fa;
 }
 
-body img {
+img {
   max-width: 100%;
   box-sizing: content-box;
   background-color: #fff;
 }
 
-body img[align=right] {
+img[align=right] {
   padding-left: 20px;
 }
 
-.markdown-body img[align=left] {
+img[align=left] {
   padding-right: 20px;
 }
 
-.markdown-body code {
+code {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
@@ -370,11 +362,11 @@ body img[align=right] {
   border-radius: 3px;
 }
 
-.markdown-body pre {
+pre {
   word-wrap: normal;
 }
 
-.markdown-body pre>code {
+pre>code {
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -384,17 +376,17 @@ body img[align=right] {
   border: 0;
 }
 
-.markdown-body .highlight {
+.highlight {
   margin-bottom: 16px;
 }
 
-.markdown-body .highlight pre {
+.highlight pre {
   margin-bottom: 0;
   word-break: normal;
 }
 
-.markdown-body .highlight pre,
-body pre {
+.highlight pre,
+pre {
   padding: 16px;
   overflow: auto;
   font-size: 85%;
@@ -403,9 +395,9 @@ body pre {
   border-radius: 3px;
 }
 
-body pre code {
+pre code {
   display: inline;
-  max-width: auto;
+  max-width: 100%;
   padding: 0;
   margin: 0;
   overflow: visible;
@@ -415,12 +407,12 @@ body pre code {
   border: 0;
 }
 
-body .full-commit .btn-outline:not(:disabled):hover {
+.full-commit .btn-outline:not(:disabled):hover {
   color: #005cc5;
   border-color: #005cc5;
 }
 
-body kbd {
+kbd {
   display: inline-block;
   padding: 3px 5px;
   font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -440,19 +432,19 @@ body :checked+.radio-label {
   border-color: #0366d6;
 }
 
-body .task-list-item {
+.task-list-item {
   list-style-type: none;
 }
 
-body .task-list-item+.task-list-item {
+.task-list-item+.task-list-item {
   margin-top: 3px;
 }
 
-body .task-list-item input {
+.task-list-item input {
   margin: 0 0.2em 0.25em -1.6em;
   vertical-align: middle;
 }
 
-body hr {
+hr {
   border-bottom-color: #eee;
 }

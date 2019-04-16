@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Markdown from 'markdown-it'
+import React, { Component, Fragment } from 'react';
+import Markdown from 'markdown-it';
 
 // https://stackoverflow.com/a/31880193/5485114
 //https://github.com/sunflowerdeath/react-markdown-it
@@ -15,11 +15,11 @@ class MarkdownIt extends Component {
   }
 
   render() {
-    let Container = this.props.container;
-    return <Container>{this.content()}</Container>
+    // let Container = this.props.container;
+    return <Fragment>{this.content()}</Fragment>
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate (nextProps, nextState) {
     if (nextProps.options !== this.props.options) {
       this.md = new Markdown(nextProps.options)
     }

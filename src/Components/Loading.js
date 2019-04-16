@@ -6,7 +6,7 @@ class  Loading extends Component {
   renderTombstoneFilter() {
     if (this.props.tombstoneType === "list") {
       return [
-        <ContentLoader key="tombOne" height={140}>
+        <ContentLoader key="listTomb" height={140}>
           <rect y="5" rx="1" ry="1" style={{ width: '50%', height: '13' }} preserveAspectRatio="none" />
           <rect y="25" rx="1" ry="1" style={{ width: '21%', height: '7' }} preserveAspectRatio="none" />
           <rect y="49" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
@@ -27,7 +27,7 @@ class  Loading extends Component {
       ]
     } if (this.props.tombstoneType === "single") {
       return (
-        <ContentLoader height={220}>
+        <ContentLoader key="singleTomb" height={220}>
           <rect y="5" rx="1" ry="1" style={{ width: '40%', height: '13' }} preserveAspectRatio="none" />
           <rect y="25" rx="1" ry="1" style={{ width: '21%', height: '7' }} preserveAspectRatio="none" />
           <rect y="49" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
