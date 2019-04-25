@@ -19,7 +19,7 @@ class FetchData extends Component {
   }
 
   // https://coderwall.com/p/pluhsg/google-spreadsheet-json-api-sql-filtering
-  parseData(data) {
+  parseData = (data) => {
     let column_length = data.cols.length;
     if (!column_length || !data.rows.length) {
       return false;
@@ -46,7 +46,7 @@ class FetchData extends Component {
       }
     }
     return result;
-  }
+  };
 
   _fetchData = async () => {
     this.setState({
@@ -71,13 +71,13 @@ class FetchData extends Component {
           let jsonData = JSON.parse(dataTable.toJSON());
           let parsedData = this.parseData(jsonData);
           // console.log(parsedData);
-          console.log(this.props.tombstoneType)
+          // console.log(this.props.tombstoneType)
           if (parsedData) {
             this.props.onFetch(parsedData, this.props.saveState)
           } else {
             this.setState({
               isLoading: false,
-              errMessage: "No Results Found"
+              errMessage: window.location.pathname
             });
           }
         });

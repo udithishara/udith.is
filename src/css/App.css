@@ -75,7 +75,7 @@ nav {
 
 .nav__url--selected {
   color: black;
-  border-bottom : black solid 2px
+  border-bottom: black solid 2px;
 }
 
 .nav__url {
@@ -196,6 +196,23 @@ footer {
   color: #6f6f6f;
   font-size: 0.8rem;
 }
+
+.search-modal {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: #252525d6;
+  text-align: center;
+  color: white;
+}
+
+
+
 
 
 /* Media Queries */

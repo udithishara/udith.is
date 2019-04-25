@@ -5,6 +5,7 @@ import FetchData from './Components/FetchData';
 import MarkdownIt from './Components/react-markdown-it';
 import { Helmet } from 'react-helmet';
 import ContentLoader from 'react-content-loader';
+import Error from './Components/Error';
 import './css/github-markdown.css';
 import './css/App.css';
 
@@ -24,6 +25,19 @@ class App extends Component {
       [saveState]: data
     });
   };
+
+  componentDidUpdate() {
+    // console.log(window.location.pathname);
+
+    let links = document.links;
+
+    for (let i = 0, linksLength = links.length; i < linksLength; i++) {
+      if (links[i].hostname !== window.location.hostname) {
+        links[i].target = '_blank';
+      }
+    }
+
+  }
 
   render() {
     return [
@@ -206,9 +220,9 @@ const Home = () => {
 };
 
 const NoMatch = ({ location }) => [
-  <div key="Error">
-    <h3>No match for <code>{location.pathname}</code></h3>
-  </div>,
+  <Fragment key="Error">
+    <Error message={location.pathname}/>
+  </Fragment>,
   <Helmet key="ErrorTitle">
     <title>404</title>
   </Helmet>
