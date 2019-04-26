@@ -1,0 +1,80 @@
+.post {
+  position: relative;
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto 3rem auto;
+  padding-bottom: 2rem;
+  border-bottom: $isabelline-white 1px solid;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.post:after {
+  display: block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: $isabelline-white 1px solid;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  background: $white;
+  border-radius: 100%;
+  box-shadow: $white 0 0 0 5px;
+}
+
+.post__meta {
+  font-size: 0.85rem;
+  color: rgba($space-gray, 0.8);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.post__title {
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.post__url {
+  color: $space-gray;
+  transition: 0.1s ease-out;
+}
+
+.post__digest {
+  color: $ebony-gray;
+  transition: color 500ms ease;
+}
+
+.post__digest:hover {
+  color: inherit;
+}
+
+.post__read-more {
+  color: rgba($black, 0.8);
+  padding-left: 0.3rem;
+  transition: all 4s ease-out;
+}
+
+.post__content a {
+  color: inherit;
+  font-weight: 500;
+  border-bottom: 1px solid $black;
+  padding-bottom: 2px;
+
+  background-image: linear-gradient(180deg, transparent 50%, $black 50%);
+  background-size: 100% 200%;
+  background-position: 0 0;
+  transition: background-position 150ms steps(100);
+}
+
+.post__content a img {
+  vertical-align: bottom;
+}
+
+.post__content a:hover {
+  color: $white;
+  transition: all 150ms ease;
+  background-position: 0 100%;
+}

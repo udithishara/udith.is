@@ -1,0 +1,26 @@
+// SCSS Variables
+
+// Base Colors
+$jet-gray: #333333;
+$white: #ffffff;
+$black: #000000;
+$light-green: #20bc7e;
+
+// Gray variants
+$space-gray: lighten( $jet-gray, 8.1% );
+$ebony-gray: lighten( $jet-gray, 16.5% );
+$nickel-gray: lighten( $jet-gray, 20% );
+$ash-gray: lighten( $jet-gray, 55% );
+
+// White variants
+$isabelline-white: darken($white, 6%);
+
+// Black variants
+$raisin-black: lighten($black, 13.6%);
+
+
+
+// Media query breakpoints
+
+// Small screen / tablet
+$screen-sm: 768px;

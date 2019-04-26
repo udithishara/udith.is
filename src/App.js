@@ -6,8 +6,7 @@ import MarkdownIt from './Components/react-markdown-it';
 import { Helmet } from 'react-helmet';
 import ContentLoader from 'react-content-loader';
 import Error from './Components/Error';
-import './css/github-markdown.css';
-import './css/App.css';
+import './styles/styles.scss';
 
 class App extends Component {
   constructor() {
@@ -110,7 +109,7 @@ const Posts = ({ Posts, handleData }) => {
 
                 <p className="post__digest">
                   {item.digest}
-                  <Link className="post__more" to={`/post/${item.slug}`} title={item.title}>»</Link>
+                  <Link className="post__read-more" to={`/post/${item.slug}`} title={item.title}>»</Link>
                 </p>
 
               </article>
@@ -145,7 +144,7 @@ const Post = ({ Post, handleData, postID}) => {
           Published: <PublishedDate timestamp={Post[0].publishedDate} />
         </span>
 
-        <div className="post_content">
+        <div className="post__content">
           <MarkdownIt source={Post[0]['content']} />
         </div>
       </article>,
