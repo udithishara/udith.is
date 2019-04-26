@@ -6,7 +6,7 @@ class  Loading extends Component {
   renderTombstoneFilter() {
     if (this.props.tombstoneType === "list") {
       return [
-        <ContentLoader key="listTomb" height={140}>
+        <ContentLoader key="listTomb-one" height={140}>
           <rect y="5" rx="1" ry="1" style={{ width: '50%', height: '13' }} preserveAspectRatio="none" />
           <rect y="25" rx="1" ry="1" style={{ width: '21%', height: '7' }} preserveAspectRatio="none" />
           <rect y="49" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
@@ -15,7 +15,7 @@ class  Loading extends Component {
           <rect y="96" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
           <rect  y="119" rx="1" ry="1" style={{ width: '100%', height: '0.6' }} preserveAspectRatio="none" />
         </ContentLoader>,
-        <ContentLoader key="tombTwo" height={120}>
+        <ContentLoader key="listTomb-two" height={120}>
           <rect y="5" rx="1" ry="1" style={{ width: '50%', height: '13' }} preserveAspectRatio="none" />
           <rect y="25" rx="1" ry="1" style={{ width: '21%', height: '7' }} preserveAspectRatio="none" />
           <rect y="49" rx="1" ry="1" style={{ width: '100%', height: '10' }} preserveAspectRatio="none" />
@@ -45,6 +45,8 @@ class  Loading extends Component {
           <rect y="205" rx="1" ry="1" style={{ width: '90%', height: '10' }} preserveAspectRatio="none" />
         </ContentLoader>
       )
+    } else {
+      return null
     }
   }
 
@@ -53,6 +55,5 @@ class  Loading extends Component {
   }
 
 }
-
 
 export default Loading;

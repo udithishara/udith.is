@@ -8,9 +8,9 @@ class FetchData extends Component {
     super(props);
     window.google.load('visualization', '1', {'packages': ['table'], "callback" : this._fetchData.bind(this)});
     this.state = {
-      isLoading: null,
+      isLoading: true,
       errMessage: null,
-      tombstoneType: null
+      tombstoneType: this.props.tombstoneType
     }
   }
 
@@ -49,10 +49,10 @@ class FetchData extends Component {
   };
 
   _fetchData = async () => {
-    this.setState({
-      isLoading: true,
-      tombstoneType: this.props.tombstoneType
-    });
+    // this.setState({
+    //   isLoading: true,
+    //   tombstoneType: this.props.tombstoneType
+    // });
 
     try {
       // console.log(this.props.gQuery)

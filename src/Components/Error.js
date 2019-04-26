@@ -12,5 +12,4 @@ class Error extends Component {
 
 }
 
-
 export default Error;
