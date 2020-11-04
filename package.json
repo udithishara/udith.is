@@ -1,0 +1,21 @@
+{
+  "name": "udith.is",
+  "version": "1.0.0",
+  "repository": "git@github.com:udithishara/udith.is.git",
+  "author": {
+    "name": "Udith Ishara Madusanka",
+    "url": "https://udith.is"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "front-matter": "^4.0.1",
+    "glob": "^7.1.6",
+    "highlight.js": "^10.1.2",
+    "markdown-it": "^11.0.0"
+  },
+  "scripts": {
+    "build": "node ./src/main.js",
+    "dev": "npx browser-sync start --server 'dist' --files 'dist' --port 9745"
+  }
+}
