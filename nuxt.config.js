@@ -38,6 +38,14 @@ export default {
   router: {
     linkActiveClass: 'nav__link--active',
   },
+  pwa: {
+    icon: {
+      purpose: 'maskable',
+    },
+    manifest: {
+      theme_color: '#e2e8f0',
+    },
+  },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['~/assets/styles/main.scss'],
   loading: {
@@ -54,6 +62,8 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    // https://pwa.nuxtjs.org/setup
+    '@nuxtjs/pwa',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
