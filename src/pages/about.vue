@@ -20,10 +20,17 @@ export default {
   head() {
     return {
       title: 'About - Udith.is',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'About - Udith.is',
+        },
+      ],
       link: [
         {
           rel: 'canonical',
-          href: 'https://udith.is/about',
+          href: process.env.baseUrl + this.$route.path,
         },
       ],
     }

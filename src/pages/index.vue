@@ -16,18 +16,20 @@
 export default {
   name: 'Home',
   layout: 'Default',
-  data() {
-    return {
-      var: process.env.BASE_URL,
-    }
-  },
   head() {
     return {
       title: 'Udith.is',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Udith.is',
+        },
+      ],
       link: [
         {
           rel: 'canonical',
-          href: 'https://udith.is',
+          href: process.env.baseUrl + this.$route.path,
         },
       ],
     }

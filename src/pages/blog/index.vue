@@ -71,10 +71,17 @@ export default {
   head() {
     return {
       title: 'Blog - Udith.is',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Blog - Udith.is',
+        },
+      ],
       link: [
         {
           rel: 'canonical',
-          href: 'https://udith.is/blog',
+          href: process.env.baseUrl + this.$route.path,
         },
       ],
     }

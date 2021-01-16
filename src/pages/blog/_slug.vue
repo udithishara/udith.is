@@ -92,7 +92,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://udith.is/blog/' + this.post.slug,
+          href: process.env.baseUrl + this.$route.path,
         },
       ],
     }
