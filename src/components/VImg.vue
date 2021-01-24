@@ -1,6 +1,6 @@
 <template>
   <div class="article__img">
-    <img loading="lazy" :src="imgSrc()" :alt="alt" />
+    <img loading="lazy" :src="imgSrc()" width="700" height="360" :alt="alt" />
   </div>
 </template>
 
