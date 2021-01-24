@@ -66,7 +66,9 @@ export default {
     } catch (err) {
       error({
         statusCode: 404,
-        message: 'Blog Post could not be found',
+        type: 'Post',
+        message:
+          'Blog post could not be found, feel free to check the repo to see if the article still exists',
       })
     }
   },

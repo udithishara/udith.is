@@ -52,6 +52,10 @@ export default {
     color: '#222d63',
     height: '5px',
   },
+  messages: {
+    error_404:
+      'This page could not be found. Possibly moved to a different path',
+  },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
   // Auto import components (https://go.nuxtjs.dev/config-components)
