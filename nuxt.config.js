@@ -1,11 +1,17 @@
+import getRoutes from './src/utils/getRoutes'
+import getSiteMeta from './src/utils/getSiteMeta'
+import global from './src/utils/global'
+
+const metaData = getSiteMeta()
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
   env: {
     baseUrl:
       process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000'
-        : process.env.npm_package_publicUrl,
+        ? 'http://localhost:37725'
+        : global.siteUrl,
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -13,6 +19,7 @@ export default {
       lang: 'en',
     },
     meta: [
+      ...metaData,
       { charset: 'utf-8' },
       {
         name: 'viewport',
@@ -79,13 +86,11 @@ export default {
     liveEdit: false,
   },
   sitemap: {
-    hostname: process.env.npm_package_publicUrl,
+    hostname: global.siteUrl,
     gzip: true,
     exclude: ['/about'],
-    routes: async () => {
-      const { $content } = require('@nuxt/content')
-      const files = await $content('blog', { deep: true }).only(['dir']).fetch()
-      return files.map((file) => file.dir)
+    routes: () => {
+      return getRoutes()
     },
   },
   generate: {
@@ -98,6 +103,9 @@ export default {
       warnings: false,
       errors: false,
     },
+  },
+  server: {
+    port: 37725, // default: 3000
   },
   watchers: {
     webpack: {

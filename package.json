@@ -1,7 +1,6 @@
 {
   "name": "udith.is",
   "license": "MIT",
-  "publicUrl": "https://udith.is",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

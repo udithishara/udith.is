@@ -22,6 +22,7 @@
 <script>
 import VImg from '~/components/VImg'
 import ReadingTime from '~/components/ReadingTime'
+import getSiteMeta from '~/utils/getSiteMeta'
 
 export default {
   name: 'PostSingle',
@@ -67,6 +68,20 @@ export default {
       })
     }
   },
+  computed: {
+    meta() {
+      const metaData = {
+        type: 'article',
+        title: this.post.title,
+        description: this.post.description,
+        url: process.env.baseUrl + this.$route.path,
+        mainImage:
+          process.env.baseUrl +
+          require(`~/content${this.post.dir}/img/${this.post.og_image}`),
+      }
+      return getSiteMeta(metaData)
+    },
+  },
   methods: {
     /**
      * Returns a formatted createdAt day from Nuxt Content
@@ -78,16 +93,21 @@ export default {
   },
   head() {
     return {
-      title: this.post.title + ' - Udith.is',
+      title: `${this.post.title} - Udith.is`,
       meta: [
+        ...this.meta,
         {
-          hid: 'description',
-          name: 'description',
-          content: this.post.description,
+          property: 'article:published_time',
+          content: this.post.createdAt,
+        },
+        {
+          property: 'article:modified_time',
+          content: this.post.updatedAt,
         },
       ],
       link: [
         {
+          hid: 'canonical',
           rel: 'canonical',
           href: process.env.baseUrl + this.$route.path,
         },

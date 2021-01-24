@@ -23,6 +23,7 @@
 
 <script>
 import PostCard from '~/components/PostCard.vue'
+import getSiteMeta from '~/utils/getSiteMeta'
 
 export default {
   name: 'Home',
@@ -37,18 +38,25 @@ export default {
 
     return { posts }
   },
+  computed: {
+    meta() {
+      const metaData = {
+        type: 'website',
+        title: 'Udith.is',
+        description: 'Udith.is',
+        url: process.env.baseUrl + this.$route.path,
+        mainImage: null,
+      }
+      return getSiteMeta(metaData)
+    },
+  },
   head() {
     return {
       title: 'Udith.is',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Udith.is',
-        },
-      ],
+      meta: [...this.meta],
       link: [
         {
+          hid: 'canonical',
           rel: 'canonical',
           href: process.env.baseUrl + this.$route.path,
         },

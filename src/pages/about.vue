@@ -14,21 +14,30 @@
 </template>
 
 <script>
+import getSiteMeta from '~/utils/getSiteMeta'
+
 export default {
   name: 'About',
   layout: 'Default',
+  computed: {
+    meta() {
+      const metaData = {
+        type: 'website',
+        title: 'Udith.is',
+        description: 'About - Udith.is',
+        url: process.env.baseUrl + this.$route.path,
+        mainImage: null,
+      }
+      return getSiteMeta(metaData)
+    },
+  },
   head() {
     return {
       title: 'About - Udith.is',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'About - Udith.is',
-        },
-      ],
+      meta: [...this.meta],
       link: [
         {
+          hid: 'canonical',
           rel: 'canonical',
           href: process.env.baseUrl + this.$route.path,
         },

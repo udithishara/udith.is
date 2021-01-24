@@ -38,6 +38,7 @@
 
 <script>
 import PostCard from '~/components/PostCard.vue'
+import getSiteMeta from '~/utils/getSiteMeta'
 
 export default {
   name: 'PostsIndex',
@@ -55,18 +56,26 @@ export default {
 
     return { posts }
   },
+  computed: {
+    meta() {
+      const metaData = {
+        type: 'website',
+        title: 'Udith.is',
+        description: 'Blog - Udith.is',
+        url: process.env.baseUrl + this.$route.path,
+        mainImage:
+          process.env.baseUrl + require('~/assets/img/og_img_blog.png'),
+      }
+      return getSiteMeta(metaData)
+    },
+  },
   head() {
     return {
       title: 'Blog - Udith.is',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Blog - Udith.is',
-        },
-      ],
+      meta: [...this.meta],
       link: [
         {
+          hid: 'canonical',
           rel: 'canonical',
           href: process.env.baseUrl + this.$route.path,
         },
