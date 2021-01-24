@@ -6,11 +6,6 @@
 
         <div class="header__meta">
           <div class="header__meta-container">
-            <img
-              class="header__meta-image"
-              src=""
-              alt="Udith Ishara Madusanka"
-            />
             <span class="header__meta-authored">
               Udith Ishara / {{ formatDate(post.createdAt) }}
             </span>
