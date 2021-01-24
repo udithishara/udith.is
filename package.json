@@ -1,6 +1,6 @@
 {
   "name": "udith.is",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
