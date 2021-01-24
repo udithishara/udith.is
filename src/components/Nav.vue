@@ -85,7 +85,6 @@ export default {
       theme: 'light',
       navLinks: [
         { text: 'Blog', href: '/blog' },
-        { text: 'About', href: '/about' },
         { text: 'Home', href: '/' },
       ],
     }

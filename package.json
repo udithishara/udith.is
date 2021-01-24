@@ -35,8 +35,8 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "browserslist": [
-    "last 1 version",
+    "last 2 version",
     "> 1%",
-    "IE 10"
+    "IE 11"
   ]
 }
