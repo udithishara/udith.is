@@ -3,11 +3,7 @@
     <section>
       <h1>Blog</h1>
 
-      <p>
-        Vivamus sit amet ante felis. Morbi sollicitudin lorem ligula, ac iaculis
-        libero rhoncus eu. Ut commodo at arcu vel dignissim. Integer sit amet
-        aliquam lorem. Aenean eu molestie massa, eget aliquam tellus.
-      </p>
+      <p>I write about programming and other stuff...</p>
 
       <div class="search">
         <input
@@ -35,38 +31,29 @@
     <section>
       <h2>All Posts</h2>
 
-      <template v-for="post in posts">
-        <NuxtLink :key="post.dir" :to="post.dir" class="card">
-          <p class="card__title">
-            {{ post.title }}
-          </p>
-          <p class="card__excerpt">
-            {{ post.description }}
-          </p>
-        </NuxtLink>
-      </template>
+      <PostCard v-for="post in posts" :key="post.dir" :post="post" />
     </section>
   </main>
 </template>
 
 <script>
+import PostCard from '~/components/PostCard.vue'
+
 export default {
   name: 'PostsIndex',
   layout: 'Default',
+  components: {
+    PostCard,
+  },
   /**
    * Fetches all the posts in /content/blog directory and returns to be listed
    */
   async asyncData({ params, error, $content }) {
     const posts = await $content('blog', { deep: true })
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .fetch()
 
     return { posts }
-  },
-  data() {
-    return {
-      test: '',
-    }
   },
   head() {
     return {
