@@ -5,7 +5,7 @@ export default {
     baseUrl:
       process.env.NODE_ENV === 'development'
         ? 'http://localhost:3000'
-        : 'https://udith.is',
+        : process.env.npm_package_publicUrl,
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -13,9 +13,7 @@ export default {
       lang: 'en',
     },
     meta: [
-      {
-        charset: 'utf-8',
-      },
+      { charset: 'utf-8' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
@@ -73,10 +71,22 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://sitemap.nuxtjs.org
+    '@nuxtjs/sitemap',
   ],
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
     liveEdit: false,
+  },
+  sitemap: {
+    hostname: process.env.npm_package_publicUrl,
+    gzip: true,
+    exclude: ['/about'],
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
+      const files = await $content('blog', { deep: true }).only(['dir']).fetch()
+      return files.map((file) => file.dir)
+    },
   },
   generate: {
     dir: 'dist',
