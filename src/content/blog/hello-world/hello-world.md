@@ -14,7 +14,7 @@ I'm Udith Ishara Madusanka, a self-taught developer from Sri Lanka. I love build
 
 Since I stopped blogging in 2012, I've been meaning to get back to it, but something else would always come up and the idea would get pushed into the background.Blogging has changed a lot since 2012. Back then [Blogger](https://blogger.com) was all the rage, nowadays there are many more options.
 
-M main reasons for starting to blog once again after all this time are to share some of the things I've learnt over the years, document things so I dont forget them when I dont use them everyday and because I made it a personal goal to start blogging in 2021.
+My main reasons for starting to blog once again after all this time are to share some of the things I've learnt over the years, document things so I dont forget them when I dont use them everyday and because I made it a personal goal to start blogging in 2021.
 
 Over the past 2-3 years I've tried to build this site with
  - ReactJS using Google Spreadsheet as the data source ([Archived branch](https://github.com/udithishara/udith.is/tree/reactjs-archived))
