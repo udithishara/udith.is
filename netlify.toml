@@ -1,0 +1,16 @@
+# Global settings applied to the whole site.
+#
+# “command” is your build command.
+# “publish” is the directory to publish (relative to the root of your repo).
+
+[build]
+  command = "yarn generate"
+  publish = "dist/"
+
+# History pushstate and single page apps
+# https://www.netlify.com/docs/redirects/#history-pushstate-and-single-page-apps
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
