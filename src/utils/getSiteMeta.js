@@ -1,10 +1,13 @@
 export default (meta) => {
   return [
+    // Common
     {
       hid: 'description',
       name: 'description',
       content: (meta && meta.description) || global.siteDesc,
     },
+    // Open Graph
+    // https://ogp.me
     {
       hid: 'og:type',
       property: 'og:type',
@@ -36,14 +39,30 @@ export default (meta) => {
       content: (meta && meta.mainImage) || global.mainImage,
     },
     {
-      hid: 'twitter:url',
-      name: 'twitter:url',
-      content: (meta && meta.url) || global.siteUrl,
+      hid: 'og:image:width',
+      property: 'og:image:width',
+      content: '700',
+    },
+    {
+      hid: 'og:image:height',
+      property: 'og:image:height',
+      content: '360',
+    },
+    // Twitter
+    // https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
     },
     {
       hid: 'twitter:title',
       name: 'twitter:title',
       content: (meta && meta.title) || global.siteTitle,
+    },
+    {
+      hid: 'twitter:url',
+      name: 'twitter:url',
+      content: (meta && meta.url) || global.siteUrl,
     },
     {
       hid: 'twitter:description',
@@ -54,6 +73,14 @@ export default (meta) => {
       hid: 'twitter:image',
       name: 'twitter:image',
       content: (meta && meta.mainImage) || global.mainImage,
+    },
+    {
+      name: 'twitter:site',
+      content: global.siteName,
+    },
+    {
+      name: 'twitter:creator',
+      content: global.twitterHandle || '',
     },
   ]
 }
