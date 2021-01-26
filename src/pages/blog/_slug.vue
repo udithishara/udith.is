@@ -77,7 +77,7 @@ export default {
         url: process.env.baseUrl + this.$route.path,
         mainImage:
           process.env.baseUrl +
-          require(`~/content${this.post.dir}/img/${this.post.og_image}`),
+          require(`~/content${this.post.dir}/img/${this.post.ogImage}`),
       }
       return getSiteMeta(metaData)
     },
