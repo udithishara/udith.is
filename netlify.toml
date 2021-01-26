@@ -6,11 +6,3 @@
 [build]
   command = "yarn generate"
   publish = "dist/"
-
-# History pushstate and single page apps
-# https://www.netlify.com/docs/redirects/#history-pushstate-and-single-page-apps
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
