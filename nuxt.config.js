@@ -96,7 +96,7 @@ export default {
   generate: {
     dir: 'dist',
     subFolders: false, // HTML files are generated according to the route path
-    fallback: '404.html',
+    fallback: true,
   },
   devServer: {
     overlay: {

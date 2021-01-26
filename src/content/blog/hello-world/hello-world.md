@@ -1,7 +1,8 @@
 ---
 title: me.say(‘Hello World’)
 description: Make a personal website -> revamp it -> revamp it again
-og_image: 'thumbnail.jpg'
+ogImage: 'thumbnail.jpg'
+createdAt: '2021-01-24'
 tags:
   - Casual
 ---
