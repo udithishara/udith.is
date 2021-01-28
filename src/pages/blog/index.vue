@@ -60,8 +60,8 @@ export default {
     meta() {
       const metaData = {
         type: 'website',
-        title: 'Udith.is',
-        description: 'Blog - Udith.is',
+        title: 'Blog - Udith.is',
+        description: 'I write about programming and other stuff...',
         url: process.env.baseUrl + this.$route.path,
         mainImage:
           process.env.baseUrl + require('~/assets/img/og_img_blog.png'),

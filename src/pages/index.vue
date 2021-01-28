@@ -42,7 +42,7 @@ export default {
     meta() {
       const metaData = {
         type: 'website',
-        title: 'Udith.is',
+        title: 'Udith Ishara Madusanka - Udith.is',
         description: 'Udith.is',
         url: process.env.baseUrl + this.$route.path,
         mainImage: null,
@@ -52,7 +52,7 @@ export default {
   },
   head() {
     return {
-      title: 'Udith.is',
+      title: 'Udith Ishara Madusanka - Udith.is',
       meta: [...this.meta],
       link: [
         {
