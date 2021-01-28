@@ -316,7 +316,7 @@ footer {
 }
 
 .theme-switch__toggle:hover {
-  background-color: #eff4fb;
+  background-color: var(--bg-color-3);
 }
 
 .theme-switch__icon {
@@ -342,16 +342,8 @@ footer {
   content: attr(data-tg-light);
 }
 
-.theme-switch__toggle:active {
-  background: #888;
-}
-
 .theme-switch__toggle:active .theme-switch__icon--dark {
   top: -10%;
-}
-
-.theme-switch__input:checked + .theme-switch__toggle:hover {
-  background-color: #32323c;
 }
 
 .theme-switch__input:checked + .theme-switch__toggle .theme-switch__icon--dark {
